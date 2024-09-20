@@ -28,35 +28,40 @@ void rotate_back_anticlockwise(RubiksCube *cube);
 void rotate_right_clockwise(RubiksCube *cube);
 void rotate_right_anticlockwise(RubiksCube *cube);
 
-// initializing functions for solving the shuffled cube
-
+// initializing functions for solving the white cross
 void moveEdgeFromYellowToWhite(RubiksCube *cube, int faceNumber);
 void fixWhiteEdge(RubiksCube *cube, int face, int row, int col, bool firstStep);
 bool checkColorEdge(RubiksCube *cube, int face, char color);
 void solveWhiteCross(RubiksCube *cube);
 
+// initializing functions for solving the white color cornors
 void fixWhiteCorner(RubiksCube *cube, int cornerNum, char colorA, char colorB);
 void solveWhiteCorners(RubiksCube *cube);
 
+// initializing functions for solving the colored edges (other than white or yellow)
 int findColoredEdgeTop(RubiksCube *cube);
 int allignEdgeToCenter(RubiksCube *cube, int faceNumber);
 void fixColoredEdge(RubiksCube *cube, int faceNumber);
 void solveColoredEdges(RubiksCube *cube);
 
+// initializing functions for solving the yellow cross
 int yellowEdgesFound(RubiksCube *cube);
 void allignTop(RubiksCube *cube, int caseNumber);
 void algorithmYellowCross(RubiksCube *cube);
 void solveYellowCross(RubiksCube *cube);
 
+// initializing functions for solving the yellow colored edges
 void allignRed(RubiksCube *cube);
 void solveYellowColorEdges(RubiksCube *cube);
 void allignForAlgorithm(RubiksCube *cube);
 void algorithmYellowColorEdges(RubiksCube *cube);
 
+// initializing functions for placing the yellow colored corners in their right positions
 void algorithmAllignYellowCorners(RubiksCube *cube, int caseNumber);
 int findCorrectCorners(RubiksCube *cube);
 void solveAllignYellowCorners(RubiksCube *cube);
 
+// initializing functions for solving the yellow colored corners by correcting their orientation
 bool checkFullySolvedCorner(RubiksCube *cube);
 void algorithmOrientationYellowCorner(RubiksCube *cube);
 void solveOrientationYellowCorners(RubiksCube *cube);
