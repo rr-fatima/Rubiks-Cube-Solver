@@ -18,5 +18,4 @@ Once the user inputs the data of the shuffled cube the program shows the user wh
 6. Placing the yellow colored corners in their right positions<br>
 7. Solving the yellow colored corners by correcting their orientation<br>
 <br>
-After each step it also shows the user what the cube should look like after applying the moves told to the user. This helps the user in keeping track that they are appplying the right moves.  
-The program conveys the movements of the cube using algorithms. For more details on the algorithms of rubiks cube please visit my website: https://cubemaster262075683.wordpress.com/algorithms/
+For each step, the program shows the user the cube movements to complete the step and what the cube should look like after applying those moves, helping users verify they are following the instructions correctly. The program conveys cube movements using algorithms. For more information on Rubik's Cube algorithms, please visit my website: https://cubemaster262075683.wordpress.com/algorithms/. Once all seven steps are completed, the shuffled cube will be solved!

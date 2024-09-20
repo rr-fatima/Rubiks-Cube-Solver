@@ -38,7 +38,8 @@ void solveWhiteCross(RubiksCube *cube);
 void fixWhiteCorner(RubiksCube *cube, int cornerNum, char colorA, char colorB);
 void solveWhiteCorners(RubiksCube *cube);
 
-// initializing functions for solving the colored edges (other than white or yellow)
+// initializing functions for solving the colored edges (other than white or
+// yellow)
 int findColoredEdgeTop(RubiksCube *cube);
 int allignEdgeToCenter(RubiksCube *cube, int faceNumber);
 void fixColoredEdge(RubiksCube *cube, int faceNumber);
@@ -56,12 +57,14 @@ void solveYellowColorEdges(RubiksCube *cube);
 void allignForAlgorithm(RubiksCube *cube);
 void algorithmYellowColorEdges(RubiksCube *cube);
 
-// initializing functions for placing the yellow colored corners in their right positions
+// initializing functions for placing the yellow colored corners in their right
+// positions
 void algorithmAllignYellowCorners(RubiksCube *cube, int caseNumber);
 int findCorrectCorners(RubiksCube *cube);
 void solveAllignYellowCorners(RubiksCube *cube);
 
-// initializing functions for solving the yellow colored corners by correcting their orientation
+// initializing functions for solving the yellow colored corners by correcting
+// their orientation
 bool checkFullySolvedCorner(RubiksCube *cube);
 void algorithmOrientationYellowCorner(RubiksCube *cube);
 void solveOrientationYellowCorners(RubiksCube *cube);
@@ -305,14 +308,16 @@ void enterShuffleCube(RubiksCube *cube) {
   enterFace(cube, 4);
   printf("\nEnter the colors for the green centre face. \n");
   enterFace(cube, 5);
-} 
+}
 
 int main() {
   int choice = 0;
   RubiksCube cube;
   initialize_cube(&cube);
 
-  printf("To input the shuffled cube either one of the following options: \n");
+  printf(
+      "To input the shuffled cube choose either one of the following options: "
+      "\n");
   printf("1: Enter the colors of the shuffled cube\n");
   printf("2: Enter the algorithm of the movements used to shuffle the cube \n");
   printf("Enter the choice: ");
@@ -334,62 +339,69 @@ int main() {
   print_cube(&cube);
 
   printf(
-      "The solution provided by the program is in the form of algorithm. "
-      "Algorithms are a finite sequence of well defined instructions used to "
-      "convey the sequence of turns of a cube through writing. For more "
-      "information on 3*3 Rubiks cube algorithms, please visit my website: "
-      "https://cubemaster262075683.wordpress.com/algorithms/ \n\n");
+      "The program provides solutions in the form of algorithms, which are "
+      "finite sequences of well-defined instructions detailing the sequence of "
+      "cube turns. For more information on 3x3 Rubik's Cube algorithms, please "
+      "visit my website: "
+      "https://cubemaster262075683.wordpress.com/algorithms/. \n\nWhen "
+      "applying the algorithms, hold the cube with the red face in front of "
+      "you, the white face facing down, and the yellow face facing up. The "
+      "solution is broken down into seven steps. Follow the algorithms for "
+      "each step and check your cube's colors against the cube map provided by "
+      "the program to ensure you've followed the instructions correctly.\n\n");
 
-  printf("TO SOLVE THE WHITE CROSS MAKE THE FOLLOWING MOVES: \n\n");
+  printf("1) TO SOLVE THE WHITE CROSS MAKE THE FOLLOWING MOVES: \n\n   ");
 
   solveWhiteCross(&cube);
 
-  printf("\n\nTHE SOLVED WHITE CROSS LOOKS LIKE THE FOLLOWING! \n\n");
+  printf("\n\n   THE SOLVED WHITE CROSS LOOKS LIKE THE FOLLOWING! \n\n");
   print_cube(&cube);
 
-  printf("\nTO SOLVE THE WHITE CORNERS MAKE THE FOLLOWING MOVES: \n\n");
+  printf("\n2) TO SOLVE THE WHITE CORNERS MAKE THE FOLLOWING MOVES: \n\n   ");
   solveWhiteCorners(&cube);
 
-  printf("\n\nTHE SOLVED WHITE CORNERS LOOKS LIKE THE FOLLOWING! \n\n");
+  printf("\n\n   THE SOLVED WHITE CORNERS LOOKS LIKE THE FOLLOWING! \n\n");
   print_cube(&cube);
 
-  printf("\nTO SOLVE THE COLORED EDGES MAKE THE FOLLOWING MOVES: \n\n");
+  printf("\n3) TO SOLVE THE COLORED EDGES MAKE THE FOLLOWING MOVES: \n\n   ");
   solveColoredEdges(&cube);
 
-  printf("\n\nTHE SOLVED COLORED EDGES LOOKS LIKE THE FOLLOWING! \n\n");
+  printf("\n\n   THE SOLVED COLORED EDGES LOOKS LIKE THE FOLLOWING! \n\n");
   print_cube(&cube);
 
-  printf("\nTO SOLVE THE YELLOW CROSS MAKE THE FOLLOWING MOVES: \n\n");
+  printf("\n4) TO SOLVE THE YELLOW CROSS MAKE THE FOLLOWING MOVES: \n\n   ");
   solveYellowCross(&cube);
 
-  printf("\n\nTHE SOLVED YELLOW CROSS LOOKS LIKE THE FOLLOWING! \n\n");
+  printf("\n\n   THE SOLVED YELLOW CROSS LOOKS LIKE THE FOLLOWING! \n\n");
   print_cube(&cube);
 
-  printf("\nTO SOLVE THE YELLOW EDGES MAKE THE FOLLOWING MOVES: \n\n");
+  printf("\n5) TO SOLVE THE YELLOW EDGES MAKE THE FOLLOWING MOVES: \n\n   ");
   solveYellowColorEdges(&cube);
 
-  printf("\n\nTHE SOLVED YELLOW EDGES LOOKS LIKE THE FOLLOWING! \n\n");
+  printf("\n\n   THE SOLVED YELLOW EDGES LOOKS LIKE THE FOLLOWING! \n\n");
   print_cube(&cube);
 
   printf(
-      "\nTO SOLVE THE YELLOW CORNER IN THEIR RIGHT POSITIONS MAKE THE "
-      "FOLLOWING MOVES: \n\n");
+      "\n6) TO SOLVE THE YELLOW CORNER IN THEIR RIGHT POSITIONS MAKE THE "
+      "FOLLOWING MOVES: \n\n   ");
   solveAllignYellowCorners(&cube);
 
   printf(
-      "\n\nTHE SOLVED YELLOW CORNERS IN THEIR RIGHT POSITIONS LOOKS LIKE THE "
+      "\n\n   THE SOLVED YELLOW CORNERS IN THEIR RIGHT POSITIONS LOOKS LIKE THE "
       "FOLLOWING! \n\n");
   print_cube(&cube);
 
   printf(
-      "\nTO SOLVE THE YELLOW CORNER IN THEIR RIGHT ORIENTATION MAKE THE "
-      "FOLLOWING MOVES: \n\n");
+      "\n7) TO SOLVE THE YELLOW CORNER IN THEIR RIGHT ORIENTATION MAKE THE "
+      "FOLLOWING MOVES: \n\n   ");
   solveOrientationYellowCorners(&cube);
 
   printf(
-      "\n\nTHE SOLVED YELLOW CORNERS IN THEIR RIGHT ORIENTATION LOOKS LIKE THE "
+      "\n\n   THE SOLVED YELLOW CORNERS IN THEIR RIGHT ORIENTATION LOOKS LIKE THE "
       "FOLLOWING! \n\n");
   print_cube(&cube);
+
+  printf ("\nYAY! YOU HAVE SUCCESSFULLY SOLVED THE RUBIK'S CUBE!\n");
 
   return 0;
 }
